@@ -1,0 +1,65 @@
+*{
+    box-sizing: border-box;
+    align-self: center;
+}
+
+body {
+    background-color: lightblue;
+    }
+
+div {
+    font-family: arial
+    }
+
+header {
+    color: white;
+    background-color: grey;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: underline;
+    text-align: center;
+    font-size: 30px;
+    }
+
+nav{
+    float: left;
+    width: 20%;
+    background: black;
+    padding: 47.3px;
+}
+
+.navbar__links{
+    color: #fff;
+    display: flex;
+    text-decoration: none;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 20px;
+}
+
+.navbar__links:hover{
+    color: pink;
+    transition: all 0.3s ease;
+}
+
+nav ul{
+    list-style-type: none;
+    padding: 0px;
+}
+
+article{
+    float: left;
+    padding: 20px;
+    width: 80%;
+    background-color: whitesmoke;
+}
+
+aside{
+    clear: both;
+}
+
+footer{
+    background-color: grey;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
