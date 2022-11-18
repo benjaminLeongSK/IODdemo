@@ -28,4 +28,9 @@ function Hello(name){
     return console.log("Hello"+ name);
 };
 
-Hello(" benjamin yo wassup asdasdsdasd");
+Hello(" benjamin yo wassup boioioioi");
+
+var Sentiment = require('sentiment');
+var sentiment = new Sentiment();
+var results = sentiment.analyze('humans are the best.');
+console.dir(results);
