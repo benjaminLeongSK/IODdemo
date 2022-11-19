@@ -32,5 +32,6 @@ Hello(" benjamin yo wassup boioioioi");
 
 var Sentiment = require('sentiment');
 var sentiment = new Sentiment();
-var results = sentiment.analyze('humans are the best.');
+var results = sentiment.analyze('are people happy with GST.');
 console.dir(results);
+
