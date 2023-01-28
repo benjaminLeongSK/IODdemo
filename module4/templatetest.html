@@ -1,65 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
     <style>
-
-        body {
+      body {
         font-family: Arial, Helvetica, sans-serif;
         background-color: #e3f2fd;
-        }
-        .card {
+      }
+      .card {
         padding: 10px;
-        }
-        .card-title {
+      }
+      .card-title {
         font-weight: 600;
         font-size: 3em;
         padding: 0 0 10px 0;
-        }
-        .card-description {
+      }
+      .card-description {
         font-weight: 400;
-        font-size: 2em
-        }
+        font-size: 2em;
+      }
     </style>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    
-    <body>
-        <div id="card-list"></div>
-    </body>
+  </head>
 
-    <template id="card-template">
-        <div class="card">
-            <div class="card-body">
-                <div class="card-title"></div>
-                <div class="card-text"></div>
-            </div>
-        </div>
-    </template>
-    <script>
-        const data=[
-            {
-                name:"bob",
-                age:23
-            },
-            {
-                name:"alice",
-                age:30
-            }
-        ]
-        function addCard({name, age}) {
-            const template = document.getElementById("card-template").content.cloneNode(true);
-            template.querySelector('.card-title').innerText = name;
-            template.querySelector('.card-text').innerText = age;
-            document.querySelector('#card-list').appendChild(template);
-        }
-        if ('content' in document.createElement('template')) {
-            data.forEach((ele) =>{
-                addCard();
-            })
+  <body>
+    <div id="card-list"></div>
+  </body>
 
-        }
-    </script>
+  <template id="card-template">
+    <div class="card">
+      <div class="card-body">
+        <div class="card-title"></div>
+        <div class="card-text"></div>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    const data = [
+      {
+        name: "bob",
+        age: 23,
+      },
+      {
+        name: "alice",
+        age: 30,
+      },
+    ];
+    function addCard({ name, age }) {
+      const template = document
+        .getElementById("card-template")
+        .content.cloneNode(true);
+      template.querySelector(".card-title").innerText = name;
+      template.querySelector(".card-text").innerText = age;
+      document.querySelector("#card-list").appendChild(template);
+    }
+    if ("content" in document.createElement("template")) {
+      data.forEach((ele) => {
+        addCard(ele);
+      });
+    }
+  </script>
 </html>
