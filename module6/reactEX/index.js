@@ -5,6 +5,7 @@ import FunctionComponent from "./FunctionComponents";
 import AuthButtonProp from "./AuthButtonProp";
 import AuthButtonState from "./AuthButtonState";
 import ListItems from "./ListItems.js";
+import ContactForm from "./ContactForm";
 
 function App() {
     return (
@@ -16,6 +17,11 @@ function App() {
             <AuthButtonProp isLoggedIn={true} />
             <AuthButtonState />
             <ListItems names ={["do", "reh", "me"]} />
+            <ContactForm />
+            <PopUp>
+                <h1>Warning</h1>
+                <button>click here</button>
+            </PopUp>
         </>
 
 

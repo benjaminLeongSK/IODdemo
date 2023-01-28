@@ -1,14 +1,14 @@
 import React from "react";
 import LogInButton from "./LogInButton";
-import LogOutButton from "./LogOutButton"
+import LogOutButton from "./LogOutButton";
 
 class AuthButtonState extends React.Component {
     constructor() {
         super();
         this.state = { isLoggedIn: false };
         this.handleClick = this.handleClick.bind(this);
-    }
-}
+    };
+};
 
 handleClick() {
     this.setState({ isLoggedIn = this.state.isLoggedIn});
