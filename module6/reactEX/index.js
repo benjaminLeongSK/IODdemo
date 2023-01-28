@@ -2,6 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import ClassComponent from "./ClassComponents";
 import FunctionComponent from "./FunctionComponents";
+import AuthButtonProp from "./AuthButtonProp";
+import AuthButtonState from "./AuthButtonState";
+
 
 function App() {
     return (
