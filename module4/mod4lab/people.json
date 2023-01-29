@@ -1,0 +1,62 @@
+[
+    {
+        "id": "1st",
+        "firstName": "Ronnie",
+        "lastName": "O'Sullivan",
+        "points": "992,000"
+    },
+    {
+        "id": "2nd",
+        "firstName": "Mark",
+        "lastName": "Selby",
+        "points": "810,000"
+    },
+    {
+        "id": "3rd",
+        "firstName": "Neil",
+        "lastName": "Robertson",
+        "points": "759,500"
+    },    
+    {
+        "id": "4th",
+        "firstName": "Judd",
+        "lastName": "Trump",
+        "points": "740,000"
+    },
+    {
+        "id": "5th",
+        "firstName": "Mark",
+        "lastName": "Allen",
+        "points": "713,500"
+    },
+    {
+        "id": "6th",
+        "firstName": "John",
+        "lastName": "Higgins",
+        "points": "490,500"
+    },
+    {
+        "id": "7th",
+        "firstName": "Mark",
+        "lastName": "Williams",
+        "points": "465,500"
+    },
+    {
+        "id": "8th",
+        "firstName": "Kyren",
+        "lastName": "Wilson",
+        "points": "441,500"
+    },
+    {
+        "id": "9th",
+        "firstName": "Zhao",
+        "lastName": "Xintong",
+        "points": "417,000"
+    },
+    {
+        "id": "10th",
+        "firstName": "Luca",
+        "lastName": "Brecel",
+        "points": "375,500"
+    }
+]

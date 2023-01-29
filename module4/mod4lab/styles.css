@@ -1,0 +1,37 @@
+
+h1{
+    font-family: 'DM Serif Display', serif;
+    display: flex;
+    justify-content: center;
+}
+
+.collapse{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.carousel-item{
+    height: 500px;
+}
+
+.mainimg{
+    width: 600px;
+    height: 800px;
+    object-fit: cover;
+}
+
+div{
+    padding: 5px;
+    margin: 5px;
+}
+
+#worldRanking{
+    border: 2px solid black;
+    display: flex;
+}
+
+.newsImg{
+    height: 100px;
+    width: auto;
+    object-fit: fill;
+}

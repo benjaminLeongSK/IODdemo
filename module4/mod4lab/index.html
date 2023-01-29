@@ -87,13 +87,17 @@
     >
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="./photos/three.jpg" class="d-block w-100" alt="..." />
+          <img
+            src="./photos/three.jpg"
+            class="mainImg d-block w-100"
+            alt="..."
+          />
         </div>
         <div class="carousel-item">
-          <img src="./photos/two.jpg" class="d-block w-100" alt="..." />
+          <img src="./photos/two.jpg" class="mainImg d-block w-100" alt="..." />
         </div>
         <div class="carousel-item">
-          <img src="./photos/one.jpg" class="d-block w-100" alt="..." />
+          <img src="./photos/one.jpg" class="mainImg d-block w-100" alt="..." />
         </div>
       </div>
       <button
@@ -116,17 +120,84 @@
       </button>
     </div>
 
-    <template id="card-template">
-      <div class="card">
-        <div class="card-body">
-          <div class="card-title"></div>
-          <div class="card-text"></div>
+    <div class="row">
+      <div class="rankSection col">
+        <h2>World Ranking</h2>
+        <div id="worldRanking">
+          <div id="myRanking"></div>
+          <div id="myData"></div>
+          <div id="myPoints"></div>
         </div>
       </div>
-    </template>
-    <div id="card-list"></div>
 
-    <script src="index.js"></script>
+      <div class="news col">
+        <h2>Latest News</h2>
+        <div class="row">
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="./photos/news1.jpg"
+                class="newsImg card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <p class="card-text">
+                  CHRIS WAKELIN MAKES CAREER BREAKTHROUGH WITH SNOOKER SHOOT OUT
+                  FINAL WIN OVER JULIEN LECLERCQ
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="./photos/news2.jpg"
+                class="newsImg card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <p class="card-text">
+                  SNOOKER SHOOT OUT 2023 LIVE STREAM/UPDATES - JULIEN LECLERCQ
+                  AND CHRIS WAKELIN WITH THE CHANCE TO WIN THEIR FIRST TITLE
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="./photos/news3.jpg"
+                class="newsImg card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <p class="card-text">
+                  'FIRST TIME I MADE A BREAK OVER 50!' - CHRIS WAKELIN REACTS TO
+                  DOMINANT SHOOT OUT FINAL WIN
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="./photos/news4.jpg"
+                class="newsImg card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <p class="card-text">
+                  ‘A TERRIFIC WIN’ - REANNE EVANS CLAIMS BRILLIANT VICTORY OVER
+                  STUART BINGHAM AT SNOOKER SHOOT OUT
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="index.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
