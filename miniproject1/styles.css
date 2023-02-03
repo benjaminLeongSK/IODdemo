@@ -4,12 +4,22 @@ body{
     background-attachment: fixed;
     background-size: cover;
 }
-
+/* div{
+    color:white;
+} */
 h1 {
     color:white;
     text-align: center;
     font-family: 'Anton', sans-serif;
     font-size: 90px;
+}
+
+.top-sec{
+    text-align: center;     
+}
+
+h4 {
+    color: white;
 }
 
 #char-img{
@@ -21,4 +31,9 @@ h1 {
 #card-list {
     display:flex;
     justify-content: space-evenly;
+}
+
+.card{
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 3px white;
 }
