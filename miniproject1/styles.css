@@ -4,9 +4,7 @@ body{
     background-attachment: fixed;
     background-size: cover;
 }
-/* div{
-    color:white;
-} */
+
 h1 {
     color:white;
     text-align: center;
@@ -15,7 +13,9 @@ h1 {
 }
 
 .top-sec{
-    text-align: center;     
+    text-align: center; 
+    background: rgba(51, 9, 9, 0.6);   
+    padding-bottom: 20px;
 }
 
 h4 {
