@@ -1,0 +1,24 @@
+body{
+    background-image: url(./background1.jpg) ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h1 {
+    color:white;
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 90px;
+}
+
+#char-img{
+    padding-top: 12px;
+    width: 215px;
+    height: 215px;
+}
+
+#card-list {
+    display:flex;
+    justify-content: space-evenly;
+}
