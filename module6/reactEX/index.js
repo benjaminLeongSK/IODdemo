@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import HookExample from "./HookExample"
+import ThemeComponent from "./ThemeComponent";
+
 // import ClassComponent from "./ClassComponents";
 // import FunctionComponent from "./FunctionComponents";
 // import AuthButtonProp from "./AuthButtonProp";
@@ -33,7 +35,8 @@ function App() {
     return (
         <>
         <h1> my react example </h1>
-        <HookExample />
+        {/* <HookExample /> */}
+        <ThemeComponent />
         </>
     )
 }
