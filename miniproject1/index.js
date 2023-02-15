@@ -17,11 +17,12 @@ showChar.addEventListener("click", () =>{
     
     
     function addCard(data) {
-        for (var i = 0; i < data.data.results.length; i++) {
+        const marvelData = data.data.results;
+        for (var i = 0; i < marvelData.length; i++) {
             const template = document.getElementById("marvel-card").content.cloneNode(true);
-            template.querySelector('#char-img').src=data.data.results[i].thumbnail.path+ "." + data.data.results[i].thumbnail.extension
-            template.querySelector('.char-name').innerText="NAME: " + data.data.results[i].name;
-            template.querySelector('.char-des').innerText="DESCRIPTION: " + data.data.results[i].description;
+            template.querySelector('#char-img').src=marvelData[i].thumbnail.path+ "." + marvelData[i].thumbnail.extension
+            template.querySelector('.char-name').innerText="NAME: " + marvelData[i].name;
+            template.querySelector('.char-des').innerText="DESCRIPTION: " + marvelData[i].description;
             document.querySelector('#card-list').appendChild(template);
         }
     };
