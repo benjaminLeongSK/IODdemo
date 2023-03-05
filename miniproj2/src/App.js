@@ -1,8 +1,16 @@
+import "./App.css";
+import React from "react";
+import Title from "./components/Title";
+import AddTodo from "./components/AddTodo";
+
 
 function App() {
+
   return (
-    <h1>hi</h1>
+    <div className="App">
+        <Title />
+        <AddTodo />
+    </div>
   );
 }
-
 export default App;
