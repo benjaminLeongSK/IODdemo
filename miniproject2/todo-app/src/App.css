@@ -1,38 +1,89 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Zilla+Slab:wght@500&display=swap');
+
+* {
+  background-color: azure;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling for Title and AddTodo component */
+.title h1 {
   text-align: center;
+  margin: 20px auto;
+  font-family: 'Zilla Slab', serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+form {
+  display: flex; 
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.addtodo-container input {
+  height: 40px;
+  width: 500px;
+  padding: 10px;
+  padding-right: 50px;
+  border:0;
+  border-radius:10px;
+  box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.192);
+  font-size: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form button {
+  border: 0;
+  margin-left: -50px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+/* styling for todolist */
+.todolist-container {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.todolist-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  box-shadow: 1px 2px 10px #ddd;
+  width: 70%;
+}
+
+.todo-item p{
+  font-family: 'Zilla Slab', serif;
+  font-size: 20px;
+  line-height: 40px;
+}
+
+.button-edit,
+.button-complete,
+.button-delete {
+  border: 0;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.todo-update {
+  display: flex;
+  justify-content: center;
+}
+
+.todo-update input,
+.todo-update button {
+  font-size: 20px;
+  border:0;
+  border-radius:10px;
+  box-shadow:0 0 15px 4px rgba(164, 233, 5, 0.5);
+  padding: 15px;
+}
+
+.todo-update input {
+  width: 500px;
+  margin-right: 20px;
+}
+
+.todo-update button {
+  cursor: pointer;
 }
