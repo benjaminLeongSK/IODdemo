@@ -5,12 +5,19 @@ var Controllers = require("../controllers");
 
 
 router.get('/', (req, res) => {
-    Controllers.userController.getUsers(res);
+    Controllers.booksController.getBooks(res);
 })
 
 router.post('/create', (req, res) => {
-    Controllers.userController.createUsers(req.body, res)
+    Controllers.booksController.createBooks(req.body, res)
 })
 
+router.put('/:id', (req, res) => {
+    Controllers.userController.updateUser(req, res)
+})
+
+router.delete('/:id', (req, res) => {
+    Controllers.userController.deleteUser(req, res)
+})
 
 module.exports = router;

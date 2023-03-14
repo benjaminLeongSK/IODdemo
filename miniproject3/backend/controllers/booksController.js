@@ -15,6 +15,23 @@ const createBooks = (data, res) => {
         throw err
     })
 }
+const updateBooks = (req, res) => {
+    Models.Books.update(req.body, { where: { id:req.params.id} }).then(function (data) {
+        res.send({ result: 200, data: data })
+    }).catch(err => {
+        throw err
+    })
+}
+const deleteBooks = (req, res) => {
+    Models.Books.destroy({ where: { id: req.params.id}}).then(function (data) {
+        res.send({ result: 200, data: data })
+    }).catch(err => {
+        throw err
+    })
+}
+
+
+
 module.exports = {
-getBooks, createBooks
+getBooks, createBooks, updateBooks, deleteBooks
 }

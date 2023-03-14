@@ -22,7 +22,7 @@ Books.init({
         unique: true
     }}, {
         sequelize: sequelizeInstance, modelName: 'books',
-        timestamps: true, freezeTableName: true
+        timestamps: false, freezeTableName: true
     }
 )
 
