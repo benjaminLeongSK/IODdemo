@@ -13,11 +13,11 @@ router.post('/create', (req, res) => {
 })
 
 router.put('/:id', (req, res) => {
-    Controllers.userController.updateUser(req, res)
+    Controllers.booksController.updateBooks(req, res)
 })
 
 router.delete('/:id', (req, res) => {
-    Controllers.userController.deleteUser(req, res)
+    Controllers.booksController.deleteBooks(req, res)
 })
 
 module.exports = router;

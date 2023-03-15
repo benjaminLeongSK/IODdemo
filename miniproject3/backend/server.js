@@ -2,10 +2,12 @@ let express = require("express")
 let app = express();
 let dbConnect = require("./dbConnect")
 require("dotenv").config();
+const cors = require("cors")
 
 dbConnect.connectMysql()
 
 app.use(express.json());
+app.use(cors());
 app.get("/", (req, res) => {
     res.json({ message: "Welcome to my MySQL application." });
 });
