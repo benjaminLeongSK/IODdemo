@@ -24,7 +24,7 @@ const Todo = (props) => {
 
     return ( 
         <>
-            <div key={props.id} className="todolist-container">
+            <div className="todolist-container">
                 <div className="todolist-item">
                     <div className="todo-item">
                         <p 
