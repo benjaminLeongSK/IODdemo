@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 
 const AddBooks = () => {
@@ -40,7 +40,8 @@ const AddBooks = () => {
                 onChange={handleChange} 
                 name='Author'
             />
-            <input 
+            <textarea 
+                className='textDescription'
                 type="text" 
                 placeholder='Description' 
                 onChange={handleChange} 
@@ -48,6 +49,9 @@ const AddBooks = () => {
             />
 
             <button onClick={handleClick}>Add</button>
+            <button>
+                <Link to="/" >Back to homepage</Link>
+            </button>
         </div>
      );
 }

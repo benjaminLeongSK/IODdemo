@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { useNavigate, useParams, useLocation } from 'react-router-dom';
+import { useNavigate, useParams, useLocation, Link } from 'react-router-dom';
  
 
 const UpdateBooks = (props) => {
@@ -58,6 +58,9 @@ const UpdateBooks = (props) => {
             />
 
             <button onClick={handleClick}>Update</button>
+            <button>
+                <Link to="/" >Back to home without update</Link>
+            </button>
         </div>
      );
 }

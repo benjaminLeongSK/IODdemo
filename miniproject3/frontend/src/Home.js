@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";                
+import { Link } from "react-router-dom";               
 
 const Home = () => {
     const [books, setBooks] = useState([])
@@ -37,20 +37,20 @@ const Home = () => {
             <div className="all-books">
                 {books.map((book)=>(
                     <div className="book" key={book.id}>
-                        <h2>{book.BookName}</h2>
-                        <h3>Written by: {book.Author}</h3>
+                        <h2>"{book.BookName}"</h2>
+                        <h4>Written by: {book.Author}</h4>
                         <p>{book.Description}</p>
-                        <button>
+                        <button className="updateBtn">
                             <Link to={`/update/${book.id}`} state={book} >Update</Link>
                         </button>
-                        <button onClick={()=>{
+                        <button className="deleteBtn" onClick={()=>{
                             handleDelete(book.id)
                         }}>Delete</button>
                     </div>
                 ))}
             </div>
             <button>
-                <Link to="/add">Add a new book</Link>
+                <Link to="/add" >Add a new book</Link>
             </button>
         </div>
      )
