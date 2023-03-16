@@ -25,6 +25,7 @@ const updateBooks = (req, res) => {
 const deleteBooks = (req, res) => {
     Models.Books.destroy({ where: { id: req.params.id}}).then(function (data) {
         res.send({ result: 200, data: data })
+        console.log(req.params.id)
     }).catch(err => {
         throw err
     })

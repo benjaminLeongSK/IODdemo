@@ -7,11 +7,11 @@ import UpdateBooks from './UpdateBooks';
 function App() {
   return (
     <Router>
-      <div className="content">
+      <div>
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/add" element={<AddBooks />}></Route>
-          <Route path="/update" element={<UpdateBooks />}></Route>
+          <Route path="/update/:bookId" element={<UpdateBooks />}></Route>
         </Routes>
       </div>
     </Router>
