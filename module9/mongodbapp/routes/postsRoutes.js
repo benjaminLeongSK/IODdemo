@@ -4,15 +4,11 @@ let Controllers = require("../controllers");
 
 
 router.get('/', (req, res) => {
-    Controllers.userController.getUsers(res);
-})
-
-router.get('/:id', (req, res) => {
-    Controllers.userController.getUser(res.params.id);
+    Controllers.postsController.getPosts(res);
 })
 
 router.post('/create', (req, res) => {
-    Controllers.userController.createUser(req.body, res)
+    Controllers.postsController.createPosts(req.body, res)
 })
 
 

@@ -12,7 +12,6 @@ const getUsers = (res) => {
 }
 
 const createUser = (data, res) => {
-//creates a new user using JSON data POSTed in request body
     new Models.User(data).save((err, data) => {
     if (err) throw err
     res.send({ result: 200, data: data})
