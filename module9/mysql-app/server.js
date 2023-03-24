@@ -8,6 +8,9 @@ app.use(express.json());
 let userRoutes = require('./routes/userRoutes')
 app.use('/api/users', userRoutes)
 
+let postRoute = require('./routes/postRoutes')
+app.use('/api/posts',postRoute)
+
 app.get("/", (req, res) => {
     res.json({ message: "Welcome to my MYSQL application." });
 });
