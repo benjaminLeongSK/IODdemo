@@ -11,6 +11,9 @@ app.use('/api/users', userRoutes)
 let postRoute = require('./routes/postRoutes')
 app.use('/api/posts',postRoute)
 
+let catFactsRoutes = require('./routes/randomQuoteRoutes')
+app.use('/api/catFacts', catFactsRoutes)
+
 app.get("/", (req, res) => {
     res.json({ message: "Welcome to my MYSQL application." });
 });
