@@ -1,19 +1,22 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
-
+import * as dotenv from 'dotenv';
 import postRoutes from './routes/postsRoutes.js';
+import { userRoutes } from './routes/userRoutes.js';
+
 
 const app = express();
 
-app.use('/posts', postRoutes)
-
-app.use(express.json({limit: "30mb", extended: true}));
-app.use(express.urlencoded({limit: "30mb", extended: true}));
+app.use(express.json({limit: '25mb'}));
 app.use(cors());
 
-const CONNECTION_URL = 'mongodb+srv://benjaminlsk96:Password123@cluster0.bmdtzpc.mongodb.net/test'
-const PORT = process.env.PORT || 5000; 
+app.use('/posts', postRoutes)
+app.use("/auth", userRoutes);
+dotenv.config()
+
+const CONNECTION_URL = `mongodb+srv://benjaminlsk96:${process.env.REACT_APP_password}@cluster0.bmdtzpc.mongodb.net/test`
+const PORT = process.env.REACT_APP_port; 
 
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then (() => app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)))

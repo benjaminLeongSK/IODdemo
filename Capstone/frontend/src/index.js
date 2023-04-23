@@ -1,5 +1,5 @@
 import React, { StrictMode } from "react";
-import ReactDOM from "react-dom/client"
+import ReactDOM from "react-dom/client";
 
 import App from "./App"
 import { ThemeProvider, createTheme } from "@mui/material";
@@ -18,14 +18,6 @@ const benTheme = createTheme({
             fontSize: "3rem",
             fontWeight: 600,
         },
-        h2: {
-            fontSize: "1.75rem",
-            fontWeight: 600,
-        },
-        h3: {
-            fontSize: "1.5rem",
-            fontWeight: 600,
-        },
     }
 
 })
@@ -33,8 +25,8 @@ const benTheme = createTheme({
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <StrictMode>
-        <ThemeProvider theme={benTheme}>
-            <App />
-        </ThemeProvider>
+            <ThemeProvider theme={benTheme}>
+                <App />
+            </ThemeProvider>
     </StrictMode>
 );
