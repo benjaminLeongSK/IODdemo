@@ -53,7 +53,6 @@ export const SavedReviewsId = async (req, res) => {
 }
 
 export const likeReview = async (req, res) => {
-
     try {
         const reviews = await PostReview.findById(req.body.reviewID)
         const target = reviews.likes.indexOf(req.body.userID)
@@ -66,6 +65,16 @@ export const likeReview = async (req, res) => {
         const newData = await reviews.save()
         res.status(200).json({data: newData})
         
+    } catch (error) {
+        res.status(409).json({ message: error.message})
+    }
+}
+
+export const deleteReview = async (req, res) => {
+    try {
+        const reviewID = await req.body.review
+        const response = await PostReview.deleteOne({ "_id" : reviewID })
+        res.json(response)
     } catch (error) {
         res.status(409).json({ message: error.message})
     }

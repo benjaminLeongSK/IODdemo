@@ -18,7 +18,7 @@ export const Create = () => {
         rating: "",
         description: "",
         tags: [],
-        image: "",
+        image: [],
         reviewUser: getUserID,
         username: getUsername
     });
@@ -45,7 +45,7 @@ export const Create = () => {
         try {
           await axios.post( "http://localhost:5000/posts/", review)
           fetchReviews();
-          alert("Recipe Created");
+          alert("Review Created");
           navigate("/");
         } catch (error) {
           console.error(error);
@@ -115,16 +115,14 @@ export const Create = () => {
                 </button>
 
                 <div>
-                    {/* <FileBase 
-                        type="file" 
-                        name="image"
-                        id="image"
-                        multiple={false}
-                        onDone={({base64}) => setReview({ ...review, image: base64 })}
-                    /> */}
                      <ReactImageFileToBase64 multiple={true} onCompleted={handleOnCompleted} />
                 </div>
-                <button type="submit">Create Recipe</button>
+                <div>
+                    {review.image.map((image) => {
+                        return <img src={image} alt="something"/>
+                    })}
+                </div>
+                <button type="submit">Create Review</button>
             </form>
         </div>
     )

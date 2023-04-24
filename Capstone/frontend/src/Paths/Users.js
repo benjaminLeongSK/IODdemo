@@ -28,6 +28,7 @@ export const Users = () => {
         <>
             <div>
                 <h2>{user.username}</h2>
+                <img src={user.profilePicture} alt="pp"/>
                 <p>About Me: {user.bio}</p>
                 <p>Joined: {user.createdAt}</p>
             </div>

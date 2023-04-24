@@ -6,6 +6,7 @@ const userSchema = mongoose.Schema({
     savedReviews: [{ type: mongoose.Schema.Types.ObjectId, ref: "reviews"}],
     bio: { type: String, required: true },
     createdAt: { type: Date, default: new Date() },
+    profilePicture: [{ type: String }],
 });
 
 export const UserModel = mongoose.model('users', userSchema);

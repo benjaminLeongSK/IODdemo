@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export const Review = ({review}) => {
 
-    const {setSavedReviews, updateReview, savedReviews} = useContext(reviewsContext);
+    const {setSavedReviews, updateReview, savedReviews, updateDelete} = useContext(reviewsContext);
     const userID = window.localStorage.getItem("userID");
 
     const saveReview = async (reviewID) => {    
@@ -21,6 +21,15 @@ export const Review = ({review}) => {
         try {
             const response = await axios.put("http://localhost:5000/posts/like", {userID, reviewID})
             updateReview(response.data.data)
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    const deleteReview = async (review) => {
+        try {
+            await axios.delete("http://localhost:5000/posts/delete", {data: {review}})
+            updateDelete(review)
         } catch (error) {
             console.error(error);
         }
@@ -48,6 +57,12 @@ export const Review = ({review}) => {
                         { review.likes.includes(userID) ? "Unlike!" : "like!"}
                     </button>
                     <h5>liked by {review.likes.length} users</h5>
+                    { review.reviewUser === userID ?
+                        <button onClick={() => deleteReview(review._id)}>
+                            delete 
+                        </button> :
+                        <></>
+                    }
                 </div>
          </div>
 }

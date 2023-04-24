@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
+import ReactImageFileToBase64 from "react-file-image-to-base64"
 
 export const Auth = () => {
 
@@ -14,11 +15,11 @@ export const Auth = () => {
 };
 
 const Login = () => {
+    const navigate = useNavigate()
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     
     const [, setCookies] = useCookies(["access_token"])
-    const navigate = useNavigate()
 
     const onSubmit = async (event) => {
         event.preventDefault();
@@ -51,18 +52,24 @@ const Register = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [bio, setBio] = useState("");
+    const [profilePicture, setProfilePicture] = useState([])
+
 
     const onSubmit = async (event) => {
         event.preventDefault();
 
         try {
-            await axios.post("http://localhost:5000/auth/register", {username, password, bio})
+            await axios.post("http://localhost:5000/auth/register", {username, password, bio, profilePicture})
             alert("Registration successful! Proceed to Login")
         } catch (err) {
             console.error(err)
         }
-
     }
+
+    const handleOnCompleted = files => {
+        setProfilePicture(files[0].base64_file);
+    };
+    
     return (
         <form onSubmit={onSubmit}>
             <Form 
@@ -81,13 +88,19 @@ const Register = () => {
                 >
                 </input>
             </div>
+            <div>
+                <ReactImageFileToBase64 onCompleted={handleOnCompleted} />
+            </div>
+            <div>
+                <img src={profilePicture} alt="preview"/>
+            </div>
             <button type="submit">Register</button>
         </form>
     );
 };
 
 
-const Form = ({username, setUsername, bio, setBio, password, setPassword, label}) => {
+const Form = ({username, setUsername, password, setPassword, label}) => {
     return (
         <div>
                 <h2>{label}</h2>

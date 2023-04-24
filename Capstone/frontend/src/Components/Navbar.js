@@ -14,11 +14,11 @@ export const Navbar = () => {
     return ( 
         <div className="navbar">
             <Link to="/"> Home </Link>
-            <Link to="/create"> New Review </Link>
             {!cookies.access_token ? (
-            <Link to="/auth"> Login/ Register </Link>
-            ) : (
+                <Link to="/auth"> Login/ Register </Link>
+                ) : (
                     <>                    
+                        <Link to="/create"> New Review </Link>
                         <Link to="/saved"> Saved Reviews </Link>
                         <button onClick={logout}>Logout</button>  
                     </>

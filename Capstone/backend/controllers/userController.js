@@ -3,7 +3,7 @@ import bcrypt from "bcrypt";
 import { UserModel } from "../models/users.js";
 
 export const userRegister = async (req, res) => {
-    const { username, password, bio } = req.body;
+    const { username, password, bio, profilePicture } = req.body;
     const user = await UserModel.findOne({ username });
 
     if (user) {
@@ -12,7 +12,7 @@ export const userRegister = async (req, res) => {
 
     const maskedPassword = await bcrypt.hash(password, 10);
 
-    const newUser = new UserModel({ username, bio, password: maskedPassword});
+    const newUser = new UserModel({ username, bio, password: maskedPassword, profilePicture});
     await newUser.save();
 
     res.json({message: "User successfully registered"})
@@ -40,6 +40,5 @@ export const userLogin = async (req, res) => {
 export const fetchUser = async (req, res) => {
     const userID = req.params.userId
     const user = await UserModel.findOne({_id: userID})
-    console.log(user)
     res.json(user)
 }

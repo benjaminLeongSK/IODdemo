@@ -50,10 +50,17 @@ const App = () => {
         const target = reviewsCopy.findIndex(review => review._id === newData._id)
         reviewsCopy.splice(target, 1, newData)
         setReviews(reviewsCopy);
-
     } 
 
-    const value = {reviews,savedReviews,isReviewSaved,updateReview,fetchReviews, setSavedReviews}
+    const updateDelete = (reviewID) => {
+        let reviewsCopy = [...reviews]
+        const target = reviewsCopy.findIndex(review => review._id === reviewID)
+        reviewsCopy.splice(target, 1)
+        console.log(target)
+        setReviews(reviewsCopy);
+    } 
+
+    const value = {reviews,savedReviews,isReviewSaved,updateReview,fetchReviews, setSavedReviews, updateDelete}
 
     return (
         <div>
