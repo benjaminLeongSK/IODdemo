@@ -1,7 +1,420 @@
 
+  @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap');
+  
+  * {
+    box-sizing: content-box;
+    margin: 0;
+  }
+
+  html, body, .app {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    font-family: 'Quicksand';
+  }
+
+  button {
+    background-color: blueviolet;
+    border-radius: 0.2em;
+    border: none;
+    padding:0.5rem;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .navbar {
+    background-color: rgb(98, 26, 161);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    position: fixed;
+    width: 100%;
+    margin-bottom: 64%;
+    z-index: 1;
+  }
+
+  .links {
+    padding-right: 30px;
+  }
+
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0 1em;
+  }
+
+  .logout-btn {
+    margin-left: 1rem;
+  }
+
+
   .restaurantImage {
     max-width: 100%;
     height: auto;
     margin-bottom: 10px;
   }
+
+  .auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    height:100%;
+    background-color: blueviolet;
+  }
+
+  .auth label {
+    font-weight: bold;
+    margin-bottom: 0.1em;
+  }
+
+  .auth-box {
+    display: flex;
+    background-color: white;
+    border-radius: 0.2em;
+    width: 60%;
+  }
+
+  .login-box {
+    flex: 1.5;
+    background-color: rgb(98, 26, 161);
+    color: white;
+    border-top-left-radius: 0.2em;
+    border-bottom-left-radius: 0.2em;
+  }
+
+  .register-box {
+    flex: 2;
+    color:rgb(119, 47, 182)
+  }
+
+  .register-box input {
+    background-color: rgb(242, 237, 255);
+  }
+
+  textarea {
+    background-color: rgb(242, 237, 255);
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.2em;
+    margin-bottom: 1em;
+  }
+
+  .auth form {
+    padding: 2rem;
+  }
+
+  .auth form input {
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.2em;
+  }
+
+  .auth form h2 {
+    text-align: center;
+    margin: 0.5rem 0.5rem 1rem 0.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+  }
+
+  .form-group input {
+    height:25px
+  }
+
+  .edit-form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20%;
+  }
+
+  .edit-form-group input {
+    height:25px
+  }
+  .user-photo-input {
+    flex:2;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .user-photo-input img {
+    height: auto;
+    width: 50%;
+  }
+
+  .search-bar {
+    padding-top: 100px;
+    max-width: 100%;
+    padding-left: 32px;
+    padding-right: 32px;
+    z-index: 0;
+  }
+
+  .review-box {
+    /* width: 400px; */
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.3em;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+
+  .review-images {
+    height: auto;
+    width: 100%;
+    border-top-left-radius: 0.3em;
+    border-top-right-radius: 0.3em;
+  }
   
+  .review-box .details, .review-actions {
+    padding: 1rem;
+  }
+
+  .review-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .action-btns {
+    display: flex;
+  }
+
+  .review-tags-box {
+    display: flex;
+  }
+
+  .create-recipe {
+    padding-top: 80px;
+  }
+
+  
+  .review-tags-box {
+    margin-bottom: 0.5em;
+  }
+
+  .create-recipe button[type='submit'] {
+    margin-top: 0.5em;
+  }
+
+  .review-tag {
+    font-size: 0.9em;
+  }
+
+  hr {
+    margin: 0.5em;
+    opacity: 0.2;
+  }
+
+  .review-tags-box .review-tag {
+    background-color: rgb(241, 241, 241);
+    border-radius: 0.2em;
+    padding: 0.2em 0.5em;
+    margin: 0.2em 0.5em 0.2em 0;
+  }
+
+  .review-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .likes-box span {
+    display: flex;
+    align-items: center;
+  }
+
+  .likes-box {
+    display: flex;
+    /* background-color:rgb(242, 237, 255); */
+    padding: 0.2em;
+    align-items: center;
+    border-radius: 0.2em;
+  }
+
+  .likes-box p {
+    font-weight: bold;
+    margin: 0.2em;
+  }
+
+  .save-box {
+    background-color: white;
+  }
+
+  .review-actions a {
+    text-decoration: none;
+    background-color: rgb(242, 237, 255);
+    color:rgb(98, 26, 161);
+    padding: 0.5em;
+    border-radius: 0.2em;
+    font-weight: bold;
+  }
+
+  .create-recipe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+  .create-recipe form {
+    padding: 1rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width: 30%;
+  }
+
+  .create-recipe h2 {
+    margin-bottom: 1em;
+  }
+
+  .create-recipe input, .create-recipe textarea {
+    background-color: rgb(242, 237, 255);
+    border: none;
+    padding: 0.2em;
+    border-radius: 0.2em;
+  }
+
+  .create-recipe label {
+    font-weight: bold;
+  }
+
+  #logo {
+    height: auto;
+    width: 40px;
+    /* border-radius: 50%; */
+    margin-left: 2rem;
+    margin-right: 1rem;
+    clip-path: circle(50% at 50% 50%);
+  }
+
+  .description {
+    background-color: rgb(241, 241, 241);
+    padding: 0.5rem;
+  }
+
+  .likes-box span {
+    cursor: pointer;
+  }
+
+  .likes-box svg {
+    color: red;
+  }
+
+  .save-box svg {
+    color: goldenrod;
+  }
+
+  .nav-head {
+    display: flex;
+    align-items: center;
+    color:rgb(241, 241, 241);
+  }
+
+  .delete-box svg {
+    color:black;
+  }
+
+  .review-grid {
+    display: grid;
+    padding: 2rem;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+    padding-top: 2rem;
+  }
+  
+  .user-bio {
+    text-align: center;
+    padding-top: 80px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .user-bio img {
+    clip-path: circle();
+    width: 300px
+  }
+
+  .header-title {
+    padding: 30px 0;
+    font-weight: bold;
+  }
+
+  .saved-reviews {
+    padding-top: 80px;
+  }
+
+  @media only screen and (max-width: 1500px) {
+    .review-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media only screen and (max-width: 1300px) {
+    .review-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media only screen and (max-width: 1004px) {
+    .review-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media only screen and (max-width: 504px) {
+    .review-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .navbar {
+      margin-left: -35px;
+    }
+    .user-bio {
+      padding-top: 110px;
+    }
+    .create-recipe {
+      padding-top: 110px;
+    }
+    .create-recipe form {
+      width: 70%;
+    }
+  }
+  
+  .profile-group {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .profile-logo {
+    clip-path: circle();
+    width: 50px;
+    position: absolute;
+    top: -20px;
+    right: -30px;
+  }
+
+  .profile-group .profile-tooltip {
+    visibility: hidden;
+    width: auto;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 3px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    right: -30px;
+    top: 20px;
+  }
+
+  .profile-group:hover .profile-tooltip {
+    visibility: visible;
+  }

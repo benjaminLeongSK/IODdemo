@@ -34,11 +34,19 @@ export const userLogin = async (req, res) => {
     }
 
     const token = jwt.sign({ id: user._id }, "secret");
-    res.json({ token, userID: user._id, username });
+    res.json({ token, userID: user._id, username, profilePicture: user.profilePicture});
 }
 
 export const fetchUser = async (req, res) => {
     const userID = req.params.userId
     const user = await UserModel.findOne({_id: userID})
     res.json(user)
+}
+
+export const updateUser = async (req, res) => {
+    const userID = req.params.userId
+    const {bio, username, profilePicture} = req.body;
+    
+    const update = await UserModel.findByIdAndUpdate(userID, {bio: bio, username: username, profilePicture: profilePicture })
+    res.json(update)
 }

@@ -1,5 +1,5 @@
-import { useState } from "react";
 import axios from "axios";
+import { useState } from "react";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import ReactImageFileToBase64 from "react-file-image-to-base64"
@@ -8,8 +8,10 @@ export const Auth = () => {
 
     return (
         <div className="auth">
-            <Login />
-            <Register />
+            <div className="auth-box">
+                <Login />
+                <Register />
+            </div>
         </div>
     );
 };
@@ -29,6 +31,8 @@ const Login = () => {
             setCookies("access_token", response.data.token)
             window.localStorage.setItem("userID", response.data.userID)
             window.localStorage.setItem("username", response.data.username)
+            window.localStorage.setItem("profilePicture", response.data.profilePicture)
+            console.log(response.data)
             navigate("/")
         } catch (err) {
             alert("username or password is incorrect")
@@ -36,7 +40,8 @@ const Login = () => {
     }
 
     return (
-        <form onSubmit={onSubmit}>
+        <form className="login-box" onSubmit={onSubmit}>
+            <h2>Login</h2>
             <Form 
                 username={username}
                 setUsername={setUsername}
@@ -52,7 +57,7 @@ const Register = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [bio, setBio] = useState("");
-    const [profilePicture, setProfilePicture] = useState([])
+    const [profilePicture, setProfilePicture] = useState("")
 
 
     const onSubmit = async (event) => {
@@ -71,31 +76,39 @@ const Register = () => {
     };
     
     return (
-        <form onSubmit={onSubmit}>
-            <Form 
-                username={username}
-                setUsername={setUsername}
-                password={password}
-                setPassword={setPassword}
-            />
-            <div>
-                <label htmlFor="bio">Share about yourself:</label>
-                <input 
-                    type="text" 
-                    id="bio" 
-                    value={bio}
-                    onChange={(event) => setBio(event.target.value)}
-                >
-                </input>
-            </div>
-            <div>
-                <ReactImageFileToBase64 onCompleted={handleOnCompleted} />
-            </div>
-            <div>
-                <img src={profilePicture} alt="preview"/>
-            </div>
-            <button type="submit">Register</button>
-        </form>
+        <>
+            <form className="register-box" onSubmit={onSubmit}>
+                <h2>Register</h2>
+                <Form 
+                    username={username}
+                    setUsername={setUsername}
+                    password={password}
+                    setPassword={setPassword}
+                />
+                <div className="form-group">
+                    <label htmlFor="bio">Share about yourself:</label>
+                    <textarea 
+                        rows="8"
+                        type="text" 
+                        id="bio" 
+                        value={bio}
+                        onChange={(event) => setBio(event.target.value)}
+                    >
+                    </textarea>
+                    <button type="submit">Register</button>
+                </div>
+            </form>
+                <div className="user-photo-input">
+                    <img
+                        src={
+                            profilePicture ? profilePicture 
+                            : "https://www.nicepng.com/png/detail/799-7998295_profile-placeholder-woman-720-profile-photo-placeholder-png.png"
+                        }
+                        alt="preview"
+                    />
+                    <ReactImageFileToBase64 onCompleted={handleOnCompleted} />
+                </div>
+        </>
     );
 };
 
@@ -104,7 +117,7 @@ const Form = ({username, setUsername, password, setPassword, label}) => {
     return (
         <div>
                 <h2>{label}</h2>
-                <div>
+                <div className="form-group">
                     <label htmlFor="username">Username:</label>
                     <input 
                     type="text" 
@@ -113,7 +126,7 @@ const Form = ({username, setUsername, password, setPassword, label}) => {
                     onChange={(event) => setUsername(event.target.value)}></input>
                 </div>
 
-                <div>
+                <div className="form-group">
                     <label htmlFor="password">Password:</label>
                     <input 
                     type="password" 

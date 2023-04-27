@@ -1,7 +1,13 @@
 import axios from "axios";
-import { useContext } from "react"
+import { useContext } from "react";
 import { reviewsContext } from "../App";
 import { Link } from "react-router-dom";
+import { Rating } from "@mui/material";
+import BookmarkIcon from "@mui/icons-material/Bookmark";
+import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
 export const Review = ({review}) => {
 
@@ -35,34 +41,63 @@ export const Review = ({review}) => {
         }
     }
 
-    return <div>
-                <div>
-                    <h2>{review.restaurantName}</h2>
+    return (
+        <div className="review-box">
+            {review.image.map((image) => {
+                return <img src={image} alt={review.restaurantName} className="review-images"/>
+            })}
+                <div className="details">
+                    <div className="review-head">
+                        <div>
+                            <h2>{review.restaurantName}</h2>
+                            <span style={{ marginBottom: "0.5em", opacity: 0.7 }}>
+                            {review.restaurantAddress}
+                            </span>
+                        </div>
+                        <Rating value={review.rating} readOnly></Rating>
+                    </div>
+                    <div>
+                        <div className="review-tags-box">
+                            {review.tags.map((tag) => {
+                                return <p className="review-tag">{tag}</p>
+                            })}
+                        </div>
+                        <hr></hr>
+                        <p className="description">{review.description}</p>
+                    </div>
                 </div>
-                <div>
-                    <h3>Tags: {review.tags.join(", ")}</h3>
-                    <h3>Ratings: {review.rating}</h3>
-                    {review.image.map((image) => {
-                        return <img src={image} alt={review.restaurantName}/>
-                    })}
-                    <p>{review.description}</p>
-                    <p><i>{review.restaurantAddress}</i></p>
-                    <p>Posted by: <Link to={`/users/${review.reviewUser}`}>{review.username}</Link></p>
-                    <button 
-                    onClick={() => saveReview(review._id)}
-                    > 
-                    {savedReviews.includes(review._id) ? "Unsave" : "save"}
-                    </button>
-                    <button onClick={() => likeReview(userID, review._id)}>
-                        { review.likes.includes(userID) ? "Unlike!" : "like!"}
-                    </button>
-                    <h5>liked by {review.likes.length} users</h5>
-                    { review.reviewUser === userID ?
-                        <button onClick={() => deleteReview(review._id)}>
-                            delete 
-                        </button> :
-                        <></>
-                    }
+
+                <div className="review-actions">
+                    <p>Posted by: 
+                        <Link to={`/users/${review.reviewUser}`}>{review.username}</Link>
+                    </p>
+                    <div className="action-btns">
+                        <div class="likes-box delete-box">
+                            <span onClick={() => deleteReview(review._id)}>
+                                {review.reviewUser === userID ? <DeleteForeverIcon /> : <></>}
+                            </span>
+                        </div>
+                        <div class="save-box likes-box">
+                            <span onClick={() => saveReview(review._id)}>
+                                {savedReviews.includes(review._id) ? (
+                                    <BookmarkIcon />
+                                ) : (
+                                    <BookmarkBorderIcon />
+                                )}
+                            </span>
+                        </div>
+                        <div className="likes-box">
+                            <span onClick={() => likeReview(userID, review._id)}>
+                            {review.likes.includes(userID) ? (
+                                <FavoriteIcon />
+                            ) : (
+                                <FavoriteBorderIcon />
+                            )}
+                            </span>
+                            <p>{review.likes.length}</p>
+                        </div>
+                    </div>
                 </div>
-         </div>
+        </div>
+    );
 }

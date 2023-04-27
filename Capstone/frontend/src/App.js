@@ -8,6 +8,7 @@ import { SavedReviews } from "./Paths/Saved"
 import { Navbar } from './Components/Navbar';
 import axios from "axios"
 import { Users } from './Paths/Users';
+import Snackbar from '@mui/material/Snackbar';
 
 
 export const reviewsContext = createContext(null);
@@ -60,7 +61,13 @@ const App = () => {
         setReviews(reviewsCopy);
     } 
 
-    const value = {reviews,savedReviews,isReviewSaved,updateReview,fetchReviews, setSavedReviews, updateDelete}
+    const [open, setOpen] = useState(false);
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const value = {reviews,savedReviews,isReviewSaved,updateReview,fetchReviews, setSavedReviews, updateDelete, setOpen}
 
     return (
         <div>
@@ -74,6 +81,14 @@ const App = () => {
                         <Route path="/saved" element={<SavedReviews />} />
                         <Route path="/users/:userId" element={<Users />} />
                     </Routes>
+                    <Snackbar
+                        anchorOrigin={{ vertical:"top", horizontal:"center" }}
+                        open={open}
+                        onClose={handleClose}
+                        message="Review Created!"
+                        key={"topcenter"}
+                        autoHideDuration={3000}
+                    />
                 </reviewsContext.Provider>
             </Router>
         </div>

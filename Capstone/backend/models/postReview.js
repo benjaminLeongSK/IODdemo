@@ -5,7 +5,7 @@ const reviewSchema = mongoose.Schema({
     restaurantAddress: { type: String, required: true },
     rating: { type: Number, required: true },
     description: { type: String, required: true },
-    tags: [{ type: String, required: true }],
+    tags: [{ type: String, required: false}],
     image: [{ type: String }],
     likes: [{ type: String, required: true }],
     createdAt: { type: Date, default: new Date() },
