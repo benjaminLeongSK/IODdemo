@@ -28,7 +28,7 @@ An in-depth paragraph about your project and overview of use.
 ```
 
 ## Help
-Do contact me @ 123123123@hotmail.com if you encounter any errors with the code
+Do contact me @ benjaminlsk@live.com if you encounter any errors with the code
 
 ## Authors
 
